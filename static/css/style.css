@@ -56,6 +56,7 @@ h1 {
     border-radius: 6px;
     width: 500px;
     height: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .grid-container {
@@ -65,6 +66,7 @@ h1 {
 
 .grid-row {
     margin-bottom: 15px;
+    overflow: hidden; /* 确保子元素的浮动不会影响布局 */
 }
 
 .grid-row:last-child {
@@ -78,6 +80,7 @@ h1 {
     float: left;
     border-radius: 3px;
     background: rgba(238, 228, 218, 0.35);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 添加细边框以确保边界清晰可见 */
 }
 
 .grid-cell:last-child {
@@ -100,8 +103,20 @@ h1 {
     font-weight: bold;
     z-index: 10;
     font-size: 55px;
-    transition: 100ms ease-in-out;
-    transition-property: transform;
+    transition: all 150ms ease-in-out; /* 增加过渡效果并调整时间 */
+    transition-property: transform, left, top;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tile-new {
+    animation: appear 200ms ease 100ms;
+    animation-fill-mode: backwards;
+}
+
+.tile-merged {
+    animation: pop 200ms ease 100ms;
+    animation-fill-mode: backwards;
+    z-index: 20;
 }
 
 .tile-2 {
@@ -138,30 +153,35 @@ h1 {
     background: #edcf72;
     color: #f9f6f2;
     font-size: 45px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.238095), inset 0 0 0 1px rgba(255, 255, 255, 0.142857);
 }
 
 .tile-256 {
     background: #edcc61;
     color: #f9f6f2;
     font-size: 45px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.142857);
 }
 
 .tile-512 {
     background: #edc850;
     color: #f9f6f2;
     font-size: 45px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.396825), inset 0 0 0 1px rgba(255, 255, 255, 0.142857);
 }
 
 .tile-1024 {
     background: #edc53f;
     color: #f9f6f2;
     font-size: 35px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.142857);
 }
 
 .tile-2048 {
     background: #edc22e;
     color: #f9f6f2;
     font-size: 35px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.555556), inset 0 0 0 1px rgba(255, 255, 255, 0.142857);
 }
 
 .game-message {
@@ -175,6 +195,7 @@ h1 {
     z-index: 100;
     text-align: center;
     animation: fade-in 800ms ease-in-out;
+    border-radius: 6px;
 }
 
 .game-message p {
@@ -215,12 +236,14 @@ h1 {
     line-height: 1.5;
 }
 
-@keyframes fade-in {
+@keyframes appear {
     0% {
         opacity: 0;
+        transform: scale(0);
     }
     100% {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -244,5 +267,14 @@ h1 {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
