@@ -15,7 +15,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/flask-2048.git
+git clone https://github.com/kusutori/flask-2048.git
 cd flask-2048
 
 # 安装依赖
