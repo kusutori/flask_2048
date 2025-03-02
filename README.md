@@ -1,6 +1,6 @@
 # Flask-2048 游戏
 
-注意：本项目全部由Claude 3.7 Sonnet制作，这是一个基于Flask框架实现的2048网页游戏。
+注意：本项目全部由Claude 3.7 Sonnet制作，这是一个基于Flask框架实现的2048网页游戏，python环境使用Poetry进行构建和管理。
 
 ## 功能特点
 
@@ -11,7 +11,7 @@
 
 ## 安装说明
 
-确保您已安装Python和pip，然后按照以下步骤进行安装：
+确保您已安装Python和Poetry，然后按照以下步骤进行安装：
 
 ```bash
 # 克隆仓库
@@ -23,7 +23,7 @@ cd flask-2048
 poetry install
 
 # 启动应用
-python app.py
+poetry run python app.py
 ```
 
 应用将在 `http://localhost:5000` 运行。
