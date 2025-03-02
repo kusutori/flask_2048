@@ -22,3 +22,5 @@ name = "mirrors"
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 priority = "primary"
 
+[tool.poetry]
+package-mode = false
