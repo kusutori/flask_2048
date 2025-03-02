@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048游戏</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-title">分数</div>
+                <div id="score">0</div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="game-message">
+                <p></p>
+                <div class="lower">
+                    <a class="retry-button">再试一次</a>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+            </div>
+            
+            <div class="tile-container"></div>
+        </div>
+        
+        <div class="game-explanation">
+            <p><strong>玩法说明：</strong> 使用 <strong>↑、↓、←、→</strong> 键移动方块。当两个相同数字的方块相撞时，它们会合并成一个！</p>
+            <p>目标是创建一个值为<strong>2048</strong>的方块。祝你好运！</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
